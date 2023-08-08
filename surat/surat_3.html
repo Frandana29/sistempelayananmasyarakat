@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cetak Surat ke PDF</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Formulir Surat Domisili</h1>
+
+    </header>
+    <main>
+        <form id="suratForm">
+            
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+
+            
+            <label for="nama">Jenis Kelamin:</label>
+            <input type="text" id="jk" required>
+           
+            <label for="nama">NIK:</label>
+            <input type="text" id="nik" required>
+
+            <label for="alamat">Alamat Asal:</label>
+            <textarea id="alamat" required></textarea>
+
+            <label for="pekerjaan">Tahun Awal Kepindahan</label>
+            <input type="text" id="altpekerjaan" required>
+
+            <label for="pekerjaan">Alamat Pindah</label>
+            <input type="text" id="altpdh" required>
+
+            <button type="button" onclick="cetakSurat()">Cetak Surat PDF</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Hak Cipta © 2023 Tri Aldi Frandana. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function cetakSurat() {
+            const nama = document.getElementById('nama').value;
+            const altpdh = document.getElementById('altpdh').value;
+            const jk = document.getElementById('jk').value;
+            const nik = document.getElementById('nik').value;
+            const alamat = document.getElementById('alamat').value;
+            const altpekerjaan = document.getElementById('altpekerjaan').value;
+
+
+            const suratContent = `
+               <div style="text-align: center; font-weight: bold; padding-bottom: 10px">
+               <p>RUKUN TETANGGA 03 / RUKUN WARGA 02</p>
+               <p>Kelurahan Jrebeng Lor Kecamatan Kedopok</p>
+                   <p>Kota Probolinggo</p>
+                   <p>_______________________________________________________________________________________________________</p>
+                  <br> <p>SURAT KETERANGAN DOMISILI</p>
+                   <p>NO.  /RT03/RW02</br>
+                </div>
+                
+                <p>Dengan ini kami kirimkan Warga RT 03 / RW 02 Kelurahan Jrebeng Lor Kecamatan Kedopok Kota Probolinggo</p>
+          <br>
+                <p>Nama: ${nama}</p>
+           <p>Jenis Kelamin : ${jk}</p>
+           <p>NIK : ${nik}</p>
+           <p>Pekerjaan: ${alamat}</p>
+           <p>Alamat: ${altpekerjaan}</p>
+</br>
+<p>Dengan data tersebut adalah benar warga kami di lingkungan RT03 / RW02 yang beralamatkan di ${altpdh} . Surat keterangan domisili ini berlaku selama yang bersangkutan bertempat tinggal di wilayah kami. Apabila yang bersangkutan pindah alamat agar melapor kepada pengurus RT setempat.</p>
+    <br> <p>Demikian surat keterangan domisili ini dibuat untuk dipergunakan sebagaimana mestinya.</p>      
+          </br>     
+               <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            border: none;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .signature {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    
+    <div class="container">
+        <div class="left">
+            <br><p>Mengetahui,</p>
+            <p>Ketua RW 02</p>
+            <p>Kel. Jrebeng Lor</p></br>
+            <br></br>
+           <br> <p>Mahud</p></br>
+        </div>
+        <div class="right">
+           <br>
+            <p>Probolinggo, ………………2023 </p>
+            <p>Ketua RT 03 / RW 02</p>
+            <p>Kel. Jrebeng Lor</p></br>
+            <br></br>
+            <br><p>Achmad Djunaidi</p></br>
+        </div>
+    </div>
+`;
+
+            const pdfContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <title>Surat PDF</title>
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+                <body>
+                    ${suratContent}
+                </body>
+                </html>
+            `;
+
+            const pdfWindow = window.open('', '_blank');
+            pdfWindow.document.open();
+            pdfWindow.document.write(pdfContent);
+            pdfWindow.document.close();
+            pdfWindow.print();
+        }
+    </script>
+</body>
+</html>

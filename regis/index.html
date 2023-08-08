@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="style.css">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Pendataan Warga </title> 
+</head>
+<body>
+
+
+    
+    <div class="container">
+        <header>SISTEM PELAYANAN MASYRAKAT RT03/RW02</header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Data Pribadi Kepala Keluarga</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Nama Lengkap</label>
+                            <input type="text" placeholder="Nama" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Tanggal Lahir</label>
+                            <input type="date" placeholder="TTL" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Email</label>
+                            <input type="text" placeholder="Email" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nomor HP</label>
+                            <input type="number" placeholder="Masukin Nomor HP" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Jenis Kelamin</label>
+                            <select required>
+                                <option disabled selected>Pilih</option>
+                                <option>Laki-laki</option>
+                                <option>Perempuan</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Alamat</label>
+                            <input type="text" placeholder="Masukan Email Anda" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                    <span class="title">Data Lain</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>NIK</label>
+                            <input type="text" placeholder="NIK" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>NO KK</label>
+                            <input type="number" placeholder="NO KK" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pendidikan Terakhir</label>
+                            <input type="text" placeholder="Pendidikan Terakhir" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Pekerjaan</label>
+                            <input type="text" placeholder="Pekerjaan" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Status Warga</label>
+                            <select required>
+                                <option disabled selected>Pilih</option>
+                                <option>Warga Tetap</option>
+                                <option>Warga Pendatang</option>
+                                <option>Warga Kos-Kosan</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Golongan Darah</label>
+                            <select required>
+                                <option disabled selected>Pilih</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>AB</option>
+                                <option>O</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="nextBtn">
+                        <span class="btnText">Lanjut</span>
+                        <i class="uil uil-navigator"></i>
+                    </button></a>
+                </div> 
+            </div>
+
+            <div class="form second">
+                <div class="details address">
+                    <span class="title">Data Pribadi Kepala Keluarga</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <label>Status Vaksinasi</label>
+                            <input type="text" placeholder="Status Vaksin" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nama Ayah Kandung</label>
+                            <input type="text" placeholder="Nama Ayah Kandung" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Nama Ibu Kandung</label>
+                            <input type="text" placeholder="Nama Ibu Kandung" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Status Pernikahan</label>
+                            <input type="text" placeholder="Status Pernikahan" required>
+                        </div>
+
+                        
+                    </div>
+                </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                            <span class="btnText">Kembali</span>
+                        </div>
+                        
+                        
+                        <a href="notif.html" class="tbl">Kumpulkan</a>
+                    
+                    </div>
+                </div> 
+            </div>
+        </form>
+    </div>
+
+    <div id="notification" class="notification">
+        <span id="notification-message"></span>
+        <button id="close-notification">Close</button>
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+
+    <script>
+        // Get references to the notification elements
+        const notification = document.getElementById("notification");
+        const notificationMessage = document.getElementById("notification-message");
+        const closeNotification = document.getElementById("close-notification");
+    
+        // Function to show the notification
+        function showNotification(message) {
+            notificationMessage.textContent = message;
+            notification.style.display = "block";
+        }
+    
+        // Function to hide the notification
+        function hideNotification() {
+            notification.style.display = "none";
+        }
+    
+        // Attach click event to the "Close" button
+        closeNotification.addEventListener("click", hideNotification);
+    </script>
+    
+</body>
+</html>

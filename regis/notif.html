@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendataan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .notification-container {
+            padding: 100px 150px;
+            background-color: #c7c7c7;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .notification-header {
+            font-size: xx-large;
+            color: #000000;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .notification-content {
+            padding: 20px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .notification-button {
+            background-color: #3498db;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .notification-button2 {
+            background-color: #3498db;
+            text-align: center;
+            position: relative;
+            color: #fff;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .notification-button:hover {
+            background-color: #2980b9;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .notification-container.slide-in {
+            animation: slideIn 0.5s forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="notification-container slide-in">
+        <div class="notification-header">
+            Berhasil
+        </div>
+        <div class="notification-content">
+            Data Anda Berhasil Di Tambah
+        </div>
+        <center> <a href="../index.html"><button class="notification-button">Beranda</button></center></a>
+        <center> <a href="../opsi.html"><button class="notification-button2">Input Data Baru</button></center></a>
+    </div>
+</body>
+</html>
